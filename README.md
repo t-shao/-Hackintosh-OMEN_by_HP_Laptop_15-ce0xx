@@ -13,6 +13,7 @@ OpenCore version: 0.5.9
 | Net   | Realtek RTL8111 + Intel AX200(*)       |
 | Disk  | Samsung SSD 970 EVO Plus(*) + HGST HDD |
 | BIOS  | F.20                                   |
+
 (*) component replaced on my own
 
 ## Progress
@@ -59,6 +60,11 @@ OpenCore version: 0.5.9
     - card reader? (not tested)
 - Not working
     - miniDP, HDMI ports (on dGPU)
+
+## Instructions
+1. Disable the CFG Lock of the motherboard (see guide in directory 'Disable_CFG_Lock')
+2. Copy(replace) 'BOOT' and 'OC' under 'EFI' directory of this repo into the 'EFI' directory of your ESP(EFI) partition.
+3. Adjust the kexts and OpenCore config file depending on your hardware configuration.
 
 ## Notes
 - Be free to use and tweak the configuration, but it's *at your own risk*. **Not recommended for production environment.**
