@@ -1,7 +1,7 @@
 # [Hackintosh] OMEN_by_HP_Laptop_15-ce0xx
 EFI bootloader (OpenCore) configuration for OMEN by HP Laptop 15-ce0xx
 
-OpenCore version: 0.5.9
+OpenCore version: 0.6.7
 
 ## Specs
 | Model | OMEN by HP Laptop 15-ce007tx           |
@@ -12,13 +12,13 @@ OpenCore version: 0.5.9
 | Audio | Realtek ALC295                         |
 | Net   | Realtek RTL8111 + Intel AX200(*)       |
 | Disk  | Samsung SSD 970 EVO Plus(*) + HGST HDD |
-| BIOS  | F.20                                   |
+| BIOS  | F.23                                   |
 
 (*) component replaced on my own
 
 ## Progress
 ### System Support
-- up to macOS Catalina 10.15.5 and Windows 10 v2004 (my current setup)
+- Windows 10 and up to macOS Big Sur 11.2.3 (my current setup)
 - Others are not tested, feedback is welcome.
 
 ### Hardware Functionality
@@ -32,8 +32,8 @@ OpenCore version: 0.5.9
 
 #### Display
 - Working
-    - internal display and brightness adjustment (by System Preferences or keyboard shortcuts)
-    - external display through USB Type-C port
+    - internal display and brightness adjustment (by System Preferences or hotkeys)
+    - external display through USB-C port
     - HiDPI by scripts
 - Nor working
     - discrete GPU
@@ -42,28 +42,29 @@ OpenCore version: 0.5.9
 #### Audio
 - Working
     - analog audio including speaker, headphones, and internal microphone array
+    - digital audio through USB-C port
 - Not working
-    - external microphone
+    - external microphone (not tested)
 
 #### Network
 - Working
     - wired Ethernet
     - USB network tethering
-    - Intel wifi and bt (still in early process)
+    - Intel WiFi and BT (quite stable, currently support system wifi management interface and partial Continuity features including Handoff and Universal Clipboard)
 - Not working
-    - stock Realtek wireless and bluetooth adapter
+    - stock Realtek wireless network and bluetooth adapter
 
 #### I/O
 - Working
     - USB ports (including Type-C)
-    - touchpad (support multi-finger gestures and ForceTouch simulation)
+    - touchpad (support multi-finger gestures and ForceTouch simulation, need some changes in the kext config)
     - card reader? (not tested)
 - Not working
-    - miniDP, HDMI ports (on dGPU)
+    - miniDP, HDMI ports (via dGPU)
 
 ## Instructions
 1. Disable the CFG Lock of the motherboard (see guide in directory 'Disable_CFG_Lock')
-2. Copy(replace) 'BOOT' and 'OC' under 'EFI' directory of this repo into the 'EFI' directory of your ESP(EFI) partition.
+2. Copy (replace) 'BOOT' and 'OC' under 'EFI' directory of this repo into the 'EFI' directory of your ESP (EFI) partition.
 3. Adjust the kexts and OpenCore config file depending on your hardware configuration.
 
 ## Notes
